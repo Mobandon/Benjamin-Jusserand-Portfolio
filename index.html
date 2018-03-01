@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Benjamin Jusserand: portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+ <link href="fonts.css"
+      rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+
+  <link rel='stylesheet prefetch' href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+<div class="w-100 vh-100 relative" id="desktop">
+  <div class="restrictor absolute right-2 bottom-2 left-2">
+    <transition-group name="fade">
+      <draggable-window :id="window.id" v-if="window.isShowing" v-for="(window, $index) in windows" :key="$index" :content="window.comp" :title="window.title" :index="window.id">
+        {{ window.content }}
+      </draggable-window>
+    </transition-group>
+  </div>
+  <div class="w-100 vh-100 relative" id="pres">
+    <div id="nom" class="absolute top-0 w-100 tc"><h1>Benjamin Jusserand</h1></div>
+
+  
+  
+    <div id="menu-l" class="absolute top-0 left-0 bottom-0 h-100 flex flex-column-reverse pa4" >
+      <div class="flex items-center pv3">
+
+        <button class="flex-auto bn bg-transparent" @click="openWindow('mensions')">
+          <h4 class="ma0" >Contactez-moi !</h4>
+          <figure class="mt0 mh0 mb3 w4 h4 db center icon calendar"></figure>
+          
+        </button>
+      </div>
+    </div>
+    <div id="menu-r" class="absolute top-0 right-0 bottom-0 h-100 flex flex-column flex-wrap-reverse pa4">
+      <div class="flex items-center pv3">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('welcome')">
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon me"></figure>
+          <h4 class="ma0">Bienvenue</h4>
+        </button>
+      </div>
+      <div class="flex items-center pv3">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('home')">
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon home"></figure>
+          <h4 class="ma0">Présentation</h4>
+        </button>
+      </div>
+      <div class="flex items-center pv3">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('writing')">
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon writing"></figure>
+          <h4 class="ma0">Game dev</h4>
+        </button>
+      </div>
+      <div class="flex items-center pv3">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('calendar')">
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon calendar"></figure>
+          <h4 class="ma0">Compétences</h4>
+        </button>
+      </div>
+      <div class="flex items-center pv3">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('mensions')">
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon calendar"></figure>
+          <h4 class="ma0">Musique</h4>
+        </button>
+      </div>
+      <div class="flex items-center pv3">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('merge')">
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon calendar"></figure>
+          <h4 class="ma0">Merge Paradigm</h4>
+        </button>
+      </div>
+      
+    </div>
+  </div>
+  <nav class="fixed bottom-0 left-0 right-0 flex items-center pv1 ph4">
+    <img class="logo mr4" src="http://loners05tone.com/content/logoclear.png ">
+    <a class="white link no-underline f2 mr4 b" href="#">{{activeWindowTitle}}</a>
+    <a class="white link no-underline f3 mr4" href="#">File</a>
+    <a class="white link no-underline f3 mr4" href="#">Mensions légales</a>
+    <a class="white link no-underline f3 mr4" href="#">Contrast</a>
+    <a class="white link no-underline f3 mr4" href="#">English site</a>
+    <a class="white link no-underline f3 mr4" href="#" @click="openWindow('mensions')">Aide</a>
+  </nav>
+</div>
+
+<script type="x/template" id="draggable-window">
+  <div :id="id" class="window absolute bg-white ba bw2 b--black">
+    <div class="bb b--black bw2 flex items-center pa1">
+      <button @click="closeWindow" class="bg-transparent bn dim flex items-center">
+        <i class="material-icons mr1 f5">close</i>
+        <i class="material-icons mr1 f5">close</i>
+        <i class="material-icons mr1 f5">close</i>
+      </button>
+    </div>
+    <div class="pa3">
+      <div :is="content"></div>
+    </div>
+  </div>
+</script>
+
+
+<script type="text/x-template" id="welcome-template">
+  <div class="measure">
+    <p class="mt0">Mon nom est <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
+    <p>Etudiant a <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> et créateur de <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>, studio indépendant créateur d'expériences intéractives
+    <p>Je parle Anglais <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p><p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
+    
+</script>
+<script type="text/x-template" id="home-template">
+  <div class="measure">
+    <p class="mt0">Mon rève est de créer des outils numériques pour l'innovation de la création sonore.</p>
+    <img src="https://image.ibb.co/hHCDY5/anthony_delanoix_8509_compressor.jpg"/>
+  </div>
+</script>
+<script type="text/x-template" id="writing-template">
+  <div class="measure">
+    <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink link no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
+    <hr class="o-40 mb3">
+    <a href="https://medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77" target="_blank" class="no-underline dark-pink link fw6 db mb3">An everlasting dream with you
+</a>
+<a href="https://medium.com/@mattrothenberg/living-styleguides-instantly-with-runway-529c397e8dd5" target="_blank" class="no-underline dark-pink link fw6 db mb3">Missing a deadline with you</a>
+<a href="https://uxdesign.cc/treating-full-stack-anxiety-e96f984a02ec" target="_blank" class="no-underline dark-pink link fw6 db mb3">Puzzle league demake</a>
+  </div>
+</script>
+<script type="text/x-template" id="calendar-template">
+  <div class="measure-wide">
+    <p class="mt0">Countdown until next <strong>American Presidential Election</strong></p>
+    <hr class="o-40 mb3">
+    <h4 class="mt0 mb2">Dump Trump in:</h4>
+    <div class="f4" id="timeLeft"></div>
+  </div>
+</script>
+<script type="text/x-template" id="merge-template">
+  <div class="measure-wide">
+    <p class="mt0">Je suis en train de créer une expérience interractive: <strong>Merge Paradigm</strong></p>
+    <p class="mt0">Découvrez l'histoire de Ko, un jeune misanthrope masqué cohabitant avec Achille, un démon devant lui procurer de l'anxiété qui devient intrigé par l'humanité.</p>
+    <p class="mt0">Explorez les rapports et les notes des personnages, résolvez les énigmes</p>
+  </div>
+</script>
+<script type="text/x-template" id="mensions-template">
+  <div class="measure-wide">
+    <p class="mt0">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></strong></p>
+  </div>
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+<script src='https://cdn.rawgit.com/HugoGiraudel/Countdown.js/a88b61fc/countdown.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
