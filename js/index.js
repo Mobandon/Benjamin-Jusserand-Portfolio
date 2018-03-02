@@ -25,14 +25,7 @@ var Mensions = {
 };
 
 var Calendar = {
-  template: '#calendar-template',
-  mounted: function mounted() {
-    new Countdown({
-      selector: '#timeLeft',
-      dateEnd: new Date('Nov 3, 2020 18:00:00'),
-      msgPattern: '{days} days, {hours} hours, {minutes} minutes, {seconds} seconds!'
-    });
-  }
+  template: '#calendar-template'
 };
 
 var triggerMouseEvent = function triggerMouseEvent(node, eventType) {

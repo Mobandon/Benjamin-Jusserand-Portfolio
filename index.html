@@ -43,7 +43,7 @@ content="width=device-width, initial-scale=1">
 
         <button class="flex-auto bn bg-transparent" @click="openWindow('mensions')">
           <h4 class="ma0" >Contactez-moi !</h4>
-          <figure class="mt0 mh0 mb3 w4 h4 db center icon calendar"></figure>
+          <figure class="mt0 mh0 mb3 w4 h4 db center icon contact"></figure>
           
         </button>
       </div>
@@ -63,25 +63,25 @@ content="width=device-width, initial-scale=1">
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('writing')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon writing"></figure>
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon gamedev"></figure>
           <h4 class="ma0">Game dev</h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('calendar')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon calendar"></figure>
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon compet"></figure>
           <h4 class="ma0">Compétences</h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('mensions')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon calendar"></figure>
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon music"></figure>
           <h4 class="ma0">Musique</h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('merge')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon calendar"></figure>
+          <figure class="mt0 mh0 mb3 w3 h3 db center icon mergepara"></figure>
           <h4 class="ma0">Merge Paradigm</h4>
         </button>
       </div>
@@ -89,13 +89,15 @@ content="width=device-width, initial-scale=1">
     </div>
   </div>
   <nav class="fixed bottom-0 left-0 right-0 flex items-center pv1 ph4">
-    <img class="logo mr4" src="./logoclear.jpg ">
-    <a class="white link no-underline f2 mr4 b" href="#">{{activeWindowTitle}}</a>
-    <a class="white link no-underline f3 mr4" href="#">File</a>
-    <a class="white link no-underline f3 mr4" href="#">Mensions légales</a>
-    <a class="white link no-underline f3 mr4" href="#">Contrast</a>
-    <a class="white link no-underline f3 mr4" href="#">English site</a>
-    <a class="white link no-underline f3 mr4" href="#" @click="openWindow('mensions')">Aide</a>
+    <button class="white f2 mr4 b bn bg-transparent">
+      <img class="logo mr4" src="./logoclear.jpg ">
+      {{activeWindowTitle}}
+    </button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">File</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">Mensions légales</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">Contrast</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">English site</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#" @click="openWindow('mensions')">Aide</button>
   </nav>
 </div>
 
@@ -143,7 +145,6 @@ content="width=device-width, initial-scale=1">
     <p class="mt0">Countdown until next <strong>American Presidential Election</strong></p>
     <hr class="o-40 mb3">
     <h4 class="mt0 mb2">Dump Trump in:</h4>
-    <div class="f4" id="timeLeft"></div>
   </div>
 </script>
 <script type="text/x-template" id="merge-template">
@@ -161,9 +162,8 @@ content="width=device-width, initial-scale=1">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
-<script src='https://cdn.rawgit.com/HugoGiraudel/Countdown.js/a88b61fc/countdown.min.js'></script>
 
-  
+
 
     <script  src="js/index.js"></script>
 
