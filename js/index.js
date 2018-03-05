@@ -6,7 +6,8 @@ var SITE_TRAD = [{
   legal: 'Mentions legales',
   contrast: 'Contraste',
   help: 'Aide',
-  contact: 'Contactez-moi!'
+  contact: 'Contactez-moi!',
+  lang: '<i class="fas fa-language mr1"></i>'
 },
 {
   home: 'Who I am',
@@ -16,7 +17,8 @@ var SITE_TRAD = [{
   legal: 'Legal mentions',
   contrast: 'Contrast',
   help: 'Help',
-  contact: 'Contact me!'
+  contact: 'Contact me!',
+  lang: '<i class="fas fa-language mr1"></i>'
 }];
 
 var currentlang = 0;
@@ -49,36 +51,71 @@ var triggerMouseEvent = function triggerMouseEvent(node, eventType) {
   node.dispatchEvent(clickEvent);
 };
 
-var SITE_CONTENT = [{
+var SITE_CONTENT = [];
+
+SITE_CONTENT[0] = [{
   content: 'Im the welcome window',
   title: 'Bienvenue',
   id: 'welcome',
   isShowing: true,
-  comp: SITE_TEMPLATE[currentlang].Welcome
+  comp: SITE_TEMPLATE[0].Welcome
 }, {
   content: 'Im the home window',
-  title: 'My Home',
+  title: 'Presentation',
   id: 'home',
   isShowing: false,
-  comp: SITE_TEMPLATE[currentlang].Home
+  comp: SITE_TEMPLATE[0].Home
 }, {
   content: 'Im the writing window',
   title: 'Game dev',
   id: 'writing',
   isShowing: false,
-  comp: SITE_TEMPLATE[currentlang].Writing
+  comp: SITE_TEMPLATE[0].Writing
 },{
   content: 'Im the merge window',
   title: 'Merge paradigm',
   id: 'merge',
   isShowing: false,
-  comp: SITE_TEMPLATE[currentlang].Merge
+  comp: SITE_TEMPLATE[0].Merge
 },{
   content: 'Im the mentions window',
   title: 'Mentions légales',
   id: 'mentions',
   isShowing: false,
-  comp: SITE_TEMPLATE[currentlang].Mentions
+  comp: SITE_TEMPLATE[0].Mentions
+}];
+
+//EN
+SITE_CONTENT[1] = [{
+  content: 'Im the welcome window',
+  title: 'Welcome',
+  id: 'welcome',
+  isShowing: true,
+  comp: SITE_TEMPLATE[1].Welcome
+}, {
+  content: 'Im the home window',
+  title: 'Presentation',
+  id: 'home',
+  isShowing: false,
+  comp: SITE_TEMPLATE[1].Home
+}, {
+  content: 'Im the writing window',
+  title: 'Game dev',
+  id: 'writing',
+  isShowing: false,
+  comp: SITE_TEMPLATE[1].Writing
+},{
+  content: 'Im the merge window',
+  title: 'Merge paradigm',
+  id: 'merge',
+  isShowing: false,
+  comp: SITE_TEMPLATE[1].Merge
+},{
+  content: 'Im the mentions window',
+  title: 'Legal',
+  id: 'mentions',
+  isShowing: false,
+  comp: SITE_TEMPLATE[1].Mentions
 }];
 
 Vue.component('draggable-window', {
@@ -129,7 +166,7 @@ Vue.component('draggable-window', {
 new Vue({
   el: '#desktop',
   data: {
-      windows: SITE_CONTENT,
+      windows: SITE_CONTENT[currentlang],
       activeWindowTitle: 'MobOS',
       texto: SITE_TRAD[currentlang]
   },
@@ -168,8 +205,15 @@ new Vue({
       }
     },
     changelang: function changelang(choix) {
+      console.log(currentlang);
       currentlang = choix;
       this.texto = SITE_TRAD[currentlang];
-    }
+      this.windows = SITE_CONTENT[currentlang];
+    },
+    switchlang: function switchlang(){
+      
+      if (currentlang == 0) {this.changelang(1); return}
+      if (currentlang == 1) {this.changelang(0); return}
+    },
   }
 });

@@ -7,10 +7,11 @@
 content="width=device-width, initial-scale=1">
   <title>Benjamin Jusserand: portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> -->
  <link href="fonts.css"
       rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
@@ -43,7 +44,7 @@ content="width=device-width, initial-scale=1">
 
         <button class="flex-auto bn bg-transparent" @click="openWindow('contact')">
           <h4 class="ma0" v-html="texto.contact"></h4>
-          <figure class="mt0 mh0 mb3 w4 h4 db center icon contact"></figure>
+          <i class="fas fa-bullhorn fa-3x mt0 mh0 mb3 w4 h4 db center" data-fa-transform="rotate--30"></i>
           
         </button>
       </div>
@@ -51,37 +52,37 @@ content="width=device-width, initial-scale=1">
     <div id="menu-r" class="absolute top-0 right-0 bottom-0 h-100 flex flex-column flex-wrap-reverse pa4">
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('welcome')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon me"></figure>
+          <i class="fas fa-user-circle fa-7x mt0 mh0 mb3 w3 h3 db center "></i>
           <h4 class="ma0" v-html="texto.bien"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('home')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon home"></figure>
+          <i class="fas fa-history fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.home"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('writing')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon gamedev"></figure>
+          <i class="fas fa-gamepad fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0">Game dev</h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('compet')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon compet"></figure>
+          <i class="fas fa-check-square fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.comp"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('musique')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon music"></figure>
+          <i class="fas fa-headphones fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.zic"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('merge')">
-          <figure class="mt0 mh0 mb3 w3 h3 db center icon mergepara"></figure>
+          <i class="fas fa-book fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0">Merge Paradigm</h4>
         </button>
       </div>
@@ -96,7 +97,7 @@ content="width=device-width, initial-scale=1">
     <button class="white link no-underline f3 mr4 bn bg-transparent">File</button>
     <button class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
     <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" @click="changelang(1)">English site</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
     <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
   </nav>
 </div>
@@ -105,9 +106,9 @@ content="width=device-width, initial-scale=1">
   <div :id="id" class="window absolute bg-white ba bw2 b--black">
     <div class="bb b--black bw2 flex items-center pa1">
       <button @click="closeWindow" class="bg-transparent bn dim flex items-center">
-        <i class="material-icons mr1 f5">close</i>
-        <i class="material-icons mr1 f5">close</i>
-        <i class="material-icons mr1 f5">close</i>
+        <i class="fas fa-times mr1 f5"></i>
+        <i class="fas fa-times mr1 f5"></i>
+        <i class="fas fa-times mr1 f5"></i>
       </button>
     </div>
     <div class="pa3">
