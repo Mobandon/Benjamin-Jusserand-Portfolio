@@ -1,32 +1,47 @@
+var SITE_TRAD = [{
+  home: 'Presentation',
+  bien: 'Bienvenue',
+  comp: 'Competences',
+  zic: 'Musique',
+  legal: 'Mentions legales',
+  contrast: 'Contraste',
+  help: 'Aide',
+  contact: 'Contactez-moi!'
+},
+{
+  home: 'Who I am',
+  bien: 'Welcome',
+  comp: 'Skills',
+  zic: 'Music',
+  legal: 'Legal mentions',
+  contrast: 'Contrast',
+  help: 'Help',
+  contact: 'Contact me!'
+}];
+
+var currentlang = 0;
+
 var eventHub = new Vue({
   data: {
-    cachedWindow: null
+    cachedWindow: null,
   }
 });
 
-var Welcome = {
-  template: '#welcome-template'
-};
 
-var Home = {
-  template: '#home-template'
-};
-
-var Writing = {
-  template: '#writing-template'
-};
-
-var Merge = {
-  template: '#merge-template'
-};
-
-var Mensions = {
-  template: '#mensions-template'
-};
-
-var Calendar = {
-  template: '#calendar-template'
-};
+var SITE_TEMPLATE = [{
+  Welcome: {template: '#welcome-templateFR'},
+  Home: {template: '#home-templateFR'},
+  Writing: {template: '#writing-templateFR'},
+  Merge: {template: '#merge-templateFR'},
+  Mentions: {template: '#mentions-templateFR'}
+},
+{
+  Welcome: {template: '#welcome-templateEN'},
+  Home: {template: '#home-templateEN'},
+  Writing: {template: '#writing-templateEN'},
+  Merge: {template: '#merge-templateEN'},
+  Mentions: {template: '#mentions-templateEN'}
+}];
 
 var triggerMouseEvent = function triggerMouseEvent(node, eventType) {
   var clickEvent = document.createEvent('MouseEvents');
@@ -39,45 +54,38 @@ var SITE_CONTENT = [{
   title: 'Bienvenue',
   id: 'welcome',
   isShowing: true,
-  comp: Welcome
+  comp: SITE_TEMPLATE[currentlang].Welcome
 }, {
   content: 'Im the home window',
   title: 'My Home',
   id: 'home',
   isShowing: false,
-  comp: Home
+  comp: SITE_TEMPLATE[currentlang].Home
 }, {
   content: 'Im the writing window',
   title: 'Game dev',
   id: 'writing',
   isShowing: false,
-  comp: Writing
-}, {
-  content: 'Im the calendar window',
-  title: 'Calendar',
-  id: 'calendar',
-  isShowing: false,
-  comp: Calendar
-
+  comp: SITE_TEMPLATE[currentlang].Writing
 },{
   content: 'Im the merge window',
   title: 'Merge paradigm',
   id: 'merge',
   isShowing: false,
-  comp: Merge
+  comp: SITE_TEMPLATE[currentlang].Merge
 },{
-  content: 'Im the mensions window',
-  title: 'Mensions légales',
-  id: 'mensions',
+  content: 'Im the mentions window',
+  title: 'Mentions légales',
+  id: 'mentions',
   isShowing: false,
-  comp: Mensions
+  comp: SITE_TEMPLATE[currentlang].Mentions
 }];
 
 Vue.component('draggable-window', {
   template: '#draggable-window',
   props: ['id', 'title', 'content'],
-  data: {
-    draggable: null
+  data: function(){
+    return{draggable: null,texto: "hey"};
   },
   methods: {
     closeWindow: function closeWindow() {
@@ -110,7 +118,7 @@ Vue.component('draggable-window', {
       }
     });
 
-    // LOL, "press"
+
     triggerMouseEvent(this.$el, 'mousedown');
     triggerMouseEvent(this.$el, 'mouseup');
 
@@ -121,8 +129,9 @@ Vue.component('draggable-window', {
 new Vue({
   el: '#desktop',
   data: {
-    windows: SITE_CONTENT,
-    activeWindowTitle: 'MobOS'
+      windows: SITE_CONTENT,
+      activeWindowTitle: 'MobOS',
+      texto: SITE_TRAD[currentlang]
   },
   created: function created() {
     eventHub.$on('close-window', this.closeWindow);
@@ -157,6 +166,10 @@ new Vue({
       } else {
         match.isShowing = true;
       }
+    },
+    changelang: function changelang(choix) {
+      currentlang = choix;
+      this.texto = SITE_TRAD[currentlang];
     }
   }
 });

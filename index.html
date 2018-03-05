@@ -41,8 +41,8 @@ content="width=device-width, initial-scale=1">
     <div id="menu-l" class="absolute top-0 left-0 bottom-0 h-100 flex flex-column-reverse pa4" >
       <div class="flex items-center pv3">
 
-        <button class="flex-auto bn bg-transparent" @click="openWindow('mensions')">
-          <h4 class="ma0" >Contactez-moi !</h4>
+        <button class="flex-auto bn bg-transparent" @click="openWindow('contact')">
+          <h4 class="ma0" v-html="texto.contact"></h4>
           <figure class="mt0 mh0 mb3 w4 h4 db center icon contact"></figure>
           
         </button>
@@ -52,13 +52,13 @@ content="width=device-width, initial-scale=1">
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('welcome')">
           <figure class="mt0 mh0 mb3 w3 h3 db center icon me"></figure>
-          <h4 class="ma0">Bienvenue</h4>
+          <h4 class="ma0" v-html="texto.bien"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
         <button class="flex-auto bn bg-transparent" @click="openWindow('home')">
           <figure class="mt0 mh0 mb3 w3 h3 db center icon home"></figure>
-          <h4 class="ma0">Présentation</h4>
+          <h4 class="ma0" v-html="texto.home"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
@@ -68,15 +68,15 @@ content="width=device-width, initial-scale=1">
         </button>
       </div>
       <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('calendar')">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('compet')">
           <figure class="mt0 mh0 mb3 w3 h3 db center icon compet"></figure>
-          <h4 class="ma0">Compétences</h4>
+          <h4 class="ma0" v-html="texto.comp"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('mensions')">
+        <button class="flex-auto bn bg-transparent" @click="openWindow('musique')">
           <figure class="mt0 mh0 mb3 w3 h3 db center icon music"></figure>
-          <h4 class="ma0">Musique</h4>
+          <h4 class="ma0" v-html="texto.zic"></h4>
         </button>
       </div>
       <div class="flex items-center pv3">
@@ -93,11 +93,11 @@ content="width=device-width, initial-scale=1">
       <img class="logo mr4" src="./logoclear.jpg ">
       {{activeWindowTitle}}
     </button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">File</button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">Mensions légales</button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">Contrast</button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#">English site</button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" href="#" @click="openWindow('mensions')">Aide</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent">File</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" @click="changelang(1)">English site</button>
+    <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
   </nav>
 </div>
 
@@ -117,20 +117,32 @@ content="width=device-width, initial-scale=1">
 </script>
 
 
-<script type="text/x-template" id="welcome-template">
+<script type="text/x-template" id="welcome-templateFR">
   <div class="measure">
     <p class="mt0">Mon nom est <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
     <p>Etudiant a <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> et créateur de <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>, studio indépendant créateur d'expériences intéractives
     <p>Je parle Anglais <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p><p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
     
 </script>
-<script type="text/x-template" id="home-template">
+
+<script type="text/x-template" id="welcome-templateEN">
   <div class="measure">
-    <p class="mt0">Mon rève est de créer des outils numériques pour l'innovation de la création sonore.</p>
+    <p class="mt0">My name is <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon</p>
+    <p>Student at <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> and creator of <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>, studio indépendant créateur d'expériences intéractives
+    <p>I speak english and French <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p><p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
+    
+</script>
+
+<script type="text/x-template" id="home-templateFR">
+  <div class="measure">
+    <p class="mt0">Mon rève est de créer des outils numériques pour linnovation de la création sonore.</p>
     <img src="https://image.ibb.co/hHCDY5/anthony_delanoix_8509_compressor.jpg"/>
+    
   </div>
 </script>
-<script type="text/x-template" id="writing-template">
+
+
+<script type="text/x-template" id="writing-templateFR">
   <div class="measure">
     <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink link no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
     <hr class="o-40 mb3">
@@ -140,7 +152,8 @@ content="width=device-width, initial-scale=1">
 <a href="https://uxdesign.cc/treating-full-stack-anxiety-e96f984a02ec" target="_blank" class="no-underline dark-pink link fw6 db mb3">Puzzle league demake</a>
   </div>
 </script>
-<script type="text/x-template" id="calendar-template">
+
+<script type="text/x-template" id="calendar-templateFR">
   <div class="measure-wide">
     <p class="mt0">Countdown until next <strong>American Presidential Election</strong></p>
     <hr class="o-40 mb3">
@@ -151,14 +164,18 @@ content="width=device-width, initial-scale=1">
   <div class="measure-wide">
     <p class="mt0">Je suis en train de créer une expérience interractive: <strong>Merge Paradigm</strong></p>
     <p class="mt0">Découvrez l'histoire de Ko, un jeune misanthrope masqué cohabitant avec Achille, un démon devant lui procurer de l'anxiété qui devient intrigé par l'humanité.</p>
-    <p class="mt0">Explorez les rapports et les notes des personnages, résolvez les énigmes</p>
+    <p class="mt0">Explorez les rapports et les notes des personnages, </p>
   </div>
 </script>
-<script type="text/x-template" id="mensions-template">
+
+<script type="text/x-template" id="mentions-templateFR">
   <div class="measure-wide">
     <p class="mt0">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></strong></p>
   </div>
 </script>
+
+
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
