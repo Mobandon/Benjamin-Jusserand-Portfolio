@@ -1,189 +1,194 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Benjamin Jusserand: portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"> -->
- <link href="fonts.css"
-      rel="stylesheet">
-<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+  <link href="fonts.css" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/utils/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
 
   <link rel='stylesheet prefetch' href='https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
 
-<div class="w-100 vh-100 relative" id="desktop">
-  <div class="restrictor absolute right-2 bottom-2 left-2">
-    <transition-group name="fade">
-      <draggable-window :id="window.id" v-if="window.isShowing" v-for="(window, $index) in windows" :key="$index" :content="window.comp" :title="window.title" :index="window.id">
-        {{ window.content }}
-      </draggable-window>
-    </transition-group>
-  </div>
-  <div class="w-100 vh-100 relative" id="pres">
-    <div id="nom" class="absolute top-0 w-100 tc"><h1>Benjamin Jusserand</h1></div>
+  <div class="w-100 vh-100 relative" id="desktop">
+    <div class="restrictor absolute right-2 bottom-2 left-2">
+      <transition-group name="fade">
+        <draggable-window :id="window.id" v-if="window.isShowing" v-for="(window, $index) in windows" :key="$index" :content="window.comp" :title="window.title" :index="window.id">
+          {{ window.content }}
+        </draggable-window>
+      </transition-group>
+    </div>
+    <div class="w-100 vh-100 relative" id="pres">
+      <div id="nom" class="absolute top-0 w-100 tc">
+        <h1>Benjamin Jusserand</h1></div>
 
-  
-  
-    <div id="menu-l" class="absolute top-0 left-0 bottom-0 h-100 flex flex-column-reverse pa4" >
-      <div class="flex items-center pv3">
 
-        <button class="flex-auto bn bg-transparent" @click="openWindow('contact')">
+
+      <div id="menu-l" class="absolute top-0 left-0 bottom-0 h-100 flex flex-column-reverse pa4">
+        <div class="flex items-center pv3">
+
+          <button class="flex-auto bn bg-transparent" @click="openWindow('contact')">
           <h4 class="ma0" v-html="texto.contact"></h4>
           <i class="fas fa-bullhorn fa-3x mt0 mh0 mb3 w4 h4 db center" data-fa-transform="rotate--30"></i>
-          
+
         </button>
+        </div>
       </div>
-    </div>
-    <div id="menu-r" class="absolute top-0 right-0 bottom-0 h-100 flex flex-column flex-wrap-reverse pa4">
-      <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('welcome')">
+      <div id="menu-r" class="absolute top-0 right-0 bottom-0 h-100 flex flex-column flex-wrap-reverse pa4">
+        <div class="flex items-center pv3">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('welcome')">
           <i class="fas fa-user-circle fa-7x mt0 mh0 mb3 w3 h3 db center "></i>
           <h4 class="ma0" v-html="texto.bien"></h4>
         </button>
-      </div>
-      <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('home')">
+        </div>
+        <div class="flex items-center pv3">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('home')">
           <i class="fas fa-history fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.home"></h4>
         </button>
-      </div>
-      <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('writing')">
+        </div>
+        <div class="flex items-center pv3">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('writing')">
           <i class="fas fa-gamepad fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0">Game dev</h4>
         </button>
-      </div>
-      <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('compet')">
+        </div>
+        <div class="flex items-center pv3">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('compet')">
           <i class="fas fa-check-square fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.comp"></h4>
         </button>
-      </div>
-      <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('musique')">
+        </div>
+        <div class="flex items-center pv3">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('musique')">
           <i class="fas fa-headphones fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.zic"></h4>
         </button>
-      </div>
-      <div class="flex items-center pv3">
-        <button class="flex-auto bn bg-transparent" @click="openWindow('merge')">
+        </div>
+        <div class="flex items-center pv3">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('merge')">
           <i class="fas fa-book fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0">Merge Paradigm</h4>
         </button>
+        </div>
+
       </div>
-      
     </div>
-  </div>
-  <nav class="fixed bottom-0 left-0 right-0 flex items-center pv1 ph4">
-    <button class="white f2 mr4 b bn bg-transparent">
+    <nav class="fixed bottom-0 left-0 right-0 flex items-center pv1 ph4">
+      <button class="white f2 mr4 b bn bg-transparent">
       <img class="logo mr4" src="./logoclear.jpg ">
       {{activeWindowTitle}}
     </button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent">File</button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
-    <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
-  </nav>
-</div>
+      <button class="white link no-underline f3 mr4 bn bg-transparent">File</button>
+      <button class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
+      <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
+      <button class="white link no-underline f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
+      <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
+    </nav>
+  </div>
 
-<script type="x/template" id="draggable-window">
-  <div :id="id" class="window absolute bg-white ba bw2 b--black">
-    <div class="bb b--black bw2 flex items-center pa1">
-      <button @click="closeWindow" class="bg-transparent bn dim flex items-center">
+  <script type="x/template" id="draggable-window">
+    <div :id="id" class="window absolute bg-white ba bw2 b--black">
+      <div class="bb b--black bw2 flex items-center pa1">
+        <button @click="closeWindow" class="bg-transparent bn dim flex items-center">
         <i class="fas fa-times mr1 f5"></i>
         <i class="fas fa-times mr1 f5"></i>
         <i class="fas fa-times mr1 f5"></i>
       </button>
+      </div>
+      <div class="pa3">
+        <div :is="content"></div>
+      </div>
     </div>
-    <div class="pa3">
-      <div :is="content"></div>
+  </script>
+
+
+  <script type="text/x-template" id="welcome-templateFR">
+    <div class="measure">
+      <p class="mt0">Mon nom est <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
+      <p>Etudiant a <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> et créateur de <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
+        studio indépendant créateur d'expériences intéractives
+        <p>Je parle Anglais <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p>
+        <p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
+
+  </script>
+
+  <script type="text/x-template" id="welcome-templateEN">
+    <div class="measure">
+      <p class="mt0">My name is <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon</p>
+      <p>Student at <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> and creator of <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
+        studio indépendant créateur d'expériences intéractives
+        <p>I speak english and French <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p>
+        <p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
+
+  </script>
+
+  <script type="text/x-template" id="home-templateFR">
+    <div class="measure">
+      <p class="mt0">Mon rève est de créer des outils numériques pour linnovation de la création sonore.</p>
+      <img src="https://image.ibb.co/hHCDY5/anthony_delanoix_8509_compressor.jpg" />
+
     </div>
-  </div>
-</script>
+  </script>
 
 
-<script type="text/x-template" id="welcome-templateFR">
-  <div class="measure">
-    <p class="mt0">Mon nom est <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
-    <p>Etudiant a <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> et créateur de <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>, studio indépendant créateur d'expériences intéractives
-    <p>Je parle Anglais <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p><p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
-    
-</script>
-
-<script type="text/x-template" id="welcome-templateEN">
-  <div class="measure">
-    <p class="mt0">My name is <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon</p>
-    <p>Student at <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> and creator of <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>, studio indépendant créateur d'expériences intéractives
-    <p>I speak english and French <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p><p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
-    
-</script>
-
-<script type="text/x-template" id="home-templateFR">
-  <div class="measure">
-    <p class="mt0">Mon rève est de créer des outils numériques pour linnovation de la création sonore.</p>
-    <img src="https://image.ibb.co/hHCDY5/anthony_delanoix_8509_compressor.jpg"/>
-    
-  </div>
-</script>
-
-
-<script type="text/x-template" id="writing-templateFR">
-  <div class="measure">
-    <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink link no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
-    <hr class="o-40 mb3">
-    <a href="https://medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77" target="_blank" class="no-underline dark-pink link fw6 db mb3">An everlasting dream with you
+  <script type="text/x-template" id="writing-templateFR">
+    <div class="measure">
+      <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink link no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
+      <hr class="o-40 mb3">
+      <a href="https://medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77" target="_blank" class="no-underline dark-pink link fw6 db mb3">An everlasting dream with you
 </a>
-<a href="https://medium.com/@mattrothenberg/living-styleguides-instantly-with-runway-529c397e8dd5" target="_blank" class="no-underline dark-pink link fw6 db mb3">Missing a deadline with you</a>
-<a href="https://uxdesign.cc/treating-full-stack-anxiety-e96f984a02ec" target="_blank" class="no-underline dark-pink link fw6 db mb3">Puzzle league demake</a>
-  </div>
-</script>
+      <a href="https://medium.com/@mattrothenberg/living-styleguides-instantly-with-runway-529c397e8dd5" target="_blank" class="no-underline dark-pink link fw6 db mb3">Missing a deadline with you</a>
+      <a href="https://uxdesign.cc/treating-full-stack-anxiety-e96f984a02ec" target="_blank" class="no-underline dark-pink link fw6 db mb3">Puzzle league demake</a>
+    </div>
+  </script>
 
-<script type="text/x-template" id="calendar-templateFR">
-  <div class="measure-wide">
-    <p class="mt0">Countdown until next <strong>American Presidential Election</strong></p>
-    <hr class="o-40 mb3">
-    <h4 class="mt0 mb2">Dump Trump in:</h4>
-  </div>
-</script>
-<script type="text/x-template" id="merge-template">
-  <div class="measure-wide">
-    <p class="mt0">Je suis en train de créer une expérience interractive: <strong>Merge Paradigm</strong></p>
-    <p class="mt0">Découvrez l'histoire de Ko, un jeune misanthrope masqué cohabitant avec Achille, un démon devant lui procurer de l'anxiété qui devient intrigé par l'humanité.</p>
-    <p class="mt0">Explorez les rapports et les notes des personnages, </p>
-  </div>
-</script>
+  <script type="text/x-template" id="calendar-templateFR">
+    <div class="measure-wide">
+      <p class="mt0">Countdown until next <strong>American Presidential Election</strong></p>
+      <hr class="o-40 mb3">
+      <h4 class="mt0 mb2">Dump Trump in:</h4>
+    </div>
+  </script>
+  <script type="text/x-template" id="merge-template">
+    <div class="measure-wide">
+      <p class="mt0">Je suis en train de créer une expérience interractive: <strong>Merge Paradigm</strong></p>
+      <p class="mt0">Découvrez l'histoire de Ko, un jeune misanthrope masqué cohabitant avec Achille, un démon devant lui procurer de l'anxiété qui devient intrigé par l'humanité.</p>
+      <p class="mt0">Explorez les rapports et les notes des personnages, </p>
+    </div>
+  </script>
 
-<script type="text/x-template" id="mentions-templateFR">
-  <div class="measure-wide">
-    <p class="mt0">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></strong></p>
-  </div>
-</script>
+  <script type="text/x-template" id="mentions-templateFR">
+    <div class="measure-wide">
+      <p class="mt0">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+          target="_blank">CC 3.0 BY</a></strong>
+      </p>
+    </div>
+  </script>
 
 
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
 
 
 
-    <script  src="js/index.js"></script>
+  <script src="js/index.js"></script>
 
 
 

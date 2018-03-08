@@ -1,25 +1,26 @@
 var SITE_TRAD = [{
-  home: 'Presentation',
-  bien: 'Bienvenue',
-  comp: 'Competences',
-  zic: 'Musique',
-  legal: 'Mentions legales',
-  contrast: 'Contraste',
-  help: 'Aide',
-  contact: 'Contactez-moi!',
-  lang: '<i class="fas fa-language mr1"></i>'
-},
-{
-  home: 'Who I am',
-  bien: 'Welcome',
-  comp: 'Skills',
-  zic: 'Music',
-  legal: 'Legal mentions',
-  contrast: 'Contrast',
-  help: 'Help',
-  contact: 'Contact me!',
-  lang: '<i class="fas fa-language mr1"></i>'
-}];
+    home: 'Presentation',
+    bien: 'Bienvenue',
+    comp: 'Competences',
+    zic: 'Musique',
+    legal: 'Mentions legales',
+    contrast: 'Contraste',
+    help: 'Aide',
+    contact: 'Contactez-moi!',
+    lang: '<i class="fas fa-language mr1"></i>'
+  },
+  {
+    home: 'Who I am',
+    bien: 'Welcome',
+    comp: 'Skills',
+    zic: 'Music',
+    legal: 'Legal mentions',
+    contrast: 'Contrast',
+    help: 'Help',
+    contact: 'Contact me!',
+    lang: '<i class="fas fa-language mr1"></i>'
+  }
+];
 
 var currentlang = 0;
 
@@ -31,19 +32,40 @@ var eventHub = new Vue({
 
 
 var SITE_TEMPLATE = [{
-  Welcome: {template: '#welcome-templateFR'},
-  Home: {template: '#home-templateFR'},
-  Writing: {template: '#writing-templateFR'},
-  Merge: {template: '#merge-templateFR'},
-  Mentions: {template: '#mentions-templateFR'}
-},
-{
-  Welcome: {template: '#welcome-templateEN'},
-  Home: {template: '#home-templateEN'},
-  Writing: {template: '#writing-templateEN'},
-  Merge: {template: '#merge-templateEN'},
-  Mentions: {template: '#mentions-templateEN'}
-}];
+    Welcome: {
+      template: '#welcome-templateFR'
+    },
+    Home: {
+      template: '#home-templateFR'
+    },
+    Writing: {
+      template: '#writing-templateFR'
+    },
+    Merge: {
+      template: '#merge-templateFR'
+    },
+    Mentions: {
+      template: '#mentions-templateFR'
+    }
+  },
+  {
+    Welcome: {
+      template: '#welcome-templateEN'
+    },
+    Home: {
+      template: '#home-templateEN'
+    },
+    Writing: {
+      template: '#writing-templateEN'
+    },
+    Merge: {
+      template: '#merge-templateEN'
+    },
+    Mentions: {
+      template: '#mentions-templateEN'
+    }
+  }
+];
 
 var triggerMouseEvent = function triggerMouseEvent(node, eventType) {
   var clickEvent = document.createEvent('MouseEvents');
@@ -71,13 +93,13 @@ SITE_CONTENT[0] = [{
   id: 'writing',
   isShowing: false,
   comp: SITE_TEMPLATE[0].Writing
-},{
+}, {
   content: 'Im the merge window',
   title: 'Merge paradigm',
   id: 'merge',
   isShowing: false,
   comp: SITE_TEMPLATE[0].Merge
-},{
+}, {
   content: 'Im the mentions window',
   title: 'Mentions légales',
   id: 'mentions',
@@ -104,13 +126,13 @@ SITE_CONTENT[1] = [{
   id: 'writing',
   isShowing: false,
   comp: SITE_TEMPLATE[1].Writing
-},{
+}, {
   content: 'Im the merge window',
   title: 'Merge paradigm',
   id: 'merge',
   isShowing: false,
   comp: SITE_TEMPLATE[1].Merge
-},{
+}, {
   content: 'Im the mentions window',
   title: 'Legal',
   id: 'mentions',
@@ -121,8 +143,11 @@ SITE_CONTENT[1] = [{
 Vue.component('draggable-window', {
   template: '#draggable-window',
   props: ['id', 'title', 'content'],
-  data: function(){
-    return{draggable: null,texto: "hey"};
+  data: function() {
+    return {
+      draggable: null,
+      texto: "hey"
+    };
   },
   methods: {
     closeWindow: function closeWindow() {
@@ -133,7 +158,7 @@ Vue.component('draggable-window', {
     var id = '#' + this.$el.id;
     var title = this.title;
     var x = 0,
-        y = 0;
+      y = 0;
 
     if (eventHub.cachedWindow && document.getElementById(eventHub.cachedWindow)) {
       var windowEl = document.getElementById(eventHub.cachedWindow);
@@ -166,9 +191,9 @@ Vue.component('draggable-window', {
 new Vue({
   el: '#desktop',
   data: {
-      windows: SITE_CONTENT[currentlang],
-      activeWindowTitle: 'MobOS',
-      texto: SITE_TRAD[currentlang]
+    windows: SITE_CONTENT[currentlang],
+    activeWindowTitle: 'MobOS',
+    texto: SITE_TRAD[currentlang]
   },
   created: function created() {
     eventHub.$on('close-window', this.closeWindow);
@@ -210,10 +235,16 @@ new Vue({
       this.texto = SITE_TRAD[currentlang];
       this.windows = SITE_CONTENT[currentlang];
     },
-    switchlang: function switchlang(){
-      
-      if (currentlang == 0) {this.changelang(1); return}
-      if (currentlang == 1) {this.changelang(0); return}
+    switchlang: function switchlang() {
+
+      if (currentlang == 0) {
+        this.changelang(1);
+        return
+      }
+      if (currentlang == 1) {
+        this.changelang(0);
+        return
+      }
     },
   }
 });
