@@ -7,3 +7,18 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Smart';
+	src: url('fonts/Smart.eot');
+	src: local('☺'), url('fonts/Smart.woff') format('woff'), url('fonts/Smart.ttf') format('truetype'), url('fonts/Smart.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CDEF';
+	src: url('fonts/CDEF.eot');
+	src: local('☺'), url('fonts/CDEF.woff') format('woff'), url('fonts/CDEF.ttf') format('truetype'), url('fonts/CDEF.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
