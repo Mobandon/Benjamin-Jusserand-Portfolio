@@ -20,6 +20,7 @@
     position:relative;
     margin-bottom: 30px;
   }
+
   #menu-l{
     display:none;
     justify-content: center;
@@ -55,6 +56,10 @@
   }
   button{
     color:white;
+  }
+
+  button{
+    cursor: pointer;
   }
 }
 
