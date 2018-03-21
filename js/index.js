@@ -46,6 +46,9 @@ var SITE_TEMPLATE = [{
     },
     Mentions: {
       template: '#mentions-templateFR'
+    },
+    Contact:{
+      template: '#contact-templateFR'
     }
   },
   {
@@ -63,6 +66,9 @@ var SITE_TEMPLATE = [{
     },
     Mentions: {
       template: '#mentions-templateEN'
+    },
+    Contact:{
+      template: '#contact-templateEN'
     }
   }
 ];
@@ -105,6 +111,12 @@ SITE_CONTENT[0] = [{
   id: 'mentions',
   isShowing: false,
   comp: SITE_TEMPLATE[0].Mentions
+},{
+  content: 'Im the contact window',
+  title: 'Contact',
+  id: 'contact',
+  isShowing: false,
+  comp: SITE_TEMPLATE[0].Contact
 }];
 
 //EN
@@ -138,6 +150,12 @@ SITE_CONTENT[1] = [{
   id: 'mentions',
   isShowing: false,
   comp: SITE_TEMPLATE[1].Mentions
+},{
+  content: 'Im the contact window',
+  title: 'Contact',
+  id: 'contact',
+  isShowing: false,
+  comp: SITE_TEMPLATE[1].Contact
 }];
 
 Vue.component('draggable-window', {
