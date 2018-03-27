@@ -176,11 +176,11 @@ Vue.component('draggable-window', {
     var id = '#' + this.$el.id;
     var title = this.title;
     var x = 0,
-      y = 0;
+      y = 100;
 
     if (eventHub.cachedWindow && document.getElementById(eventHub.cachedWindow)) {
       var windowEl = document.getElementById(eventHub.cachedWindow);
-      x = windowEl.getBoundingClientRect().left + 15;
+      x = windowEl.getBoundingClientRect().left + 200;
       y = windowEl.getBoundingClientRect().top + 15;
     }
 
