@@ -211,7 +211,8 @@ new Vue({
   data: {
     windows: SITE_CONTENT[currentlang],
     activeWindowTitle: 'MobOS',
-    texto: SITE_TRAD[currentlang]
+    texto: SITE_TRAD[currentlang],
+    showMenu:true
   },
   created: function created() {
     eventHub.$on('close-window', this.closeWindow);
@@ -264,5 +265,8 @@ new Vue({
         return
       }
     },
+    switchMenu: function switchMenu(){
+      this.showMenu = !this.showMenu;
+    }
   }
 });

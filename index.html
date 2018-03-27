@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Benjamin Jusserand: portfolio</title>
   <meta name="keywords" content="Benjamin,Jusserand,protfolio,games">
-  <meta name="author" content="Benjamin Jusserand"> 
+  <meta name="author" content="Benjamin Jusserand">
   <meta name="description" content="Discover the work of Benjamin Jusserand" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -92,15 +92,15 @@
       </div>
     </div>
     <nav class="fixed bottom-0 left-0 right-0 flex items-center pv1 ph4">
-      <button class="white f1 mr4 b bn flex items-center bg-transparent">
+      <button class="white f1 mr4 b bn flex items-center bg-transparent" @click="switchMenu()">
       <img class="logo mr4" src="./logoclear.jpg ">
       {{activeWindowTitle}}
     </button>
-      <button class="white link no-underline f3 mr4 bn bg-transparent">File</button>
-      <button class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
-      <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
-      <button class="white link no-underline f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
-      <button class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
+      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent">File</button>
+      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
+      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
+      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
+      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
     </nav>
   </div>
 
