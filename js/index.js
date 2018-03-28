@@ -44,8 +44,14 @@ var SITE_TEMPLATE = [{
     Merge: {
       template: '#merge-templateFR'
     },
+    Compet:{
+      template: '#compet-templateFR'
+    },
     Mentions: {
       template: '#mentions-templateFR'
+    },
+    Music: {
+      template: '#music-templateFR'
     },
     Contact:{
       template: '#contact-templateFR'
@@ -63,6 +69,12 @@ var SITE_TEMPLATE = [{
     },
     Merge: {
       template: '#merge-templateEN'
+    },
+    Compet:{
+      template: '#compet-templateEN'
+    },
+    Music: {
+      template: '#music-templateEN'
     },
     Mentions: {
       template: '#mentions-templateEN'
@@ -93,6 +105,13 @@ SITE_CONTENT[0] = [{
   id: 'home',
   isShowing: false,
   comp: SITE_TEMPLATE[0].Home
+},
+{
+  content: 'Im the music window',
+  title: 'Musique',
+  id: 'music',
+  isShowing: false,
+  comp: SITE_TEMPLATE[0].Music
 }, {
   content: 'Im the writing window',
   title: 'Game dev',
@@ -111,6 +130,12 @@ SITE_CONTENT[0] = [{
   id: 'mentions',
   isShowing: false,
   comp: SITE_TEMPLATE[0].Mentions
+},{
+  content: 'Im the competence window',
+  title: 'Competences',
+  id: 'compet',
+  isShowing: false,
+  comp: SITE_TEMPLATE[0].Compet
 },{
   content: 'Im the contact window',
   title: 'Contact',
@@ -150,6 +175,12 @@ SITE_CONTENT[1] = [{
   id: 'mentions',
   isShowing: false,
   comp: SITE_TEMPLATE[1].Mentions
+},{
+  content: 'Im the music window',
+  title: 'Music',
+  id: 'music',
+  isShowing: false,
+  comp: SITE_TEMPLATE[1].Music
 },{
   content: 'Im the contact window',
   title: 'Contact',

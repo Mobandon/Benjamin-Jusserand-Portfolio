@@ -77,7 +77,7 @@
         </button>
         </div>
         <div class="flex items-center pv3">
-          <button class="flex-auto bn bg-transparent" @click="openWindow('musique')">
+          <button class="flex-auto bn bg-transparent" @click="openWindow('music')">
           <i class="fas fa-headphones fa-7x mt0 mh0 mb3 w3 h3 db center"></i>
           <h4 class="ma0" v-html="texto.zic"></h4>
         </button>
@@ -96,11 +96,11 @@
       <img class="logo mr4" src="./logoclear.jpg ">
       {{activeWindowTitle}}
     </button>
-      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent">File</button>
-      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
-      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
-      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
-      <button v-show='showMenu' class="white link no-underline f3 mr4 bn bg-transparent" v-html="texto.help"></button>
+      <!-- <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent">File</button> -->
+      <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
+      <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
+      <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
+      <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" v-html="texto.help"></button>
     </nav>
   </div>
 
@@ -124,28 +124,28 @@
 <!-- TODO: Images pour les jeux id:0 gh:2 ic:gh-->
   <script type="text/x-template" id="welcome-templateFR">
     <div class="measure">
-      <p class="mt0">Mon nom est <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
-      <p>Etudiant a <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'IUT d'Angoulême</a> et créateur de <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
+      <p class="mt0">Mon nom est <a class="dark-pink " href="http://bjusserand.mmi-angouleme.fr/" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
+      <p>Etudiant a <a class="dark-pink " href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'IUT d'Angoulême</a> et créateur de <a class="dark-pink " href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
         studio indépendant créateur d'expériences intéractives
-        <p>Je parle Anglais <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p>
-        <p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
+        <p>Je parle Anglais et Espagnol</p>
+        <p><a class="dark-pink " href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
 
   </script>
 
   <script type="text/x-template" id="welcome-templateEN">
     <div class="measure">
-      <p class="mt0">My name is <a class="dark-pink link no-underline" href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon</p>
-      <p>Student at <a class="dark-pink link no-underline" href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> and creator of <a class="dark-pink link no-underline" href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
+      <p class="mt0">My name is <a class="dark-pink " href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon</p>
+      <p>Student at <a class="dark-pink " href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> and creator of <a class="dark-pink " href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
         studio indépendant créateur d'expériences intéractives
-        <p>I speak english and French <a class="dark-pink link no-underline" href="https://github.com/mattrothenberg" target="_blank"> </a></p>
-        <p><a class="dark-pink link no-underline" href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
+        <p>I speak english and French <a class="dark-pink " href="https://github.com/mattrothenberg" target="_blank"> </a></p>
+        <p><a class="dark-pink " href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
 
   </script>
 
   <script type="text/x-template" id="home-templateFR">
     <div class="measure">
       <p class="mt0">Mon rève est de créer des outils numériques pour linnovation de la création sonore.</p>
-      <img src="photomoi.jpg" />
+      <img width="50%" src="photomoi.jpg" />
 
     </div>
   </script>
@@ -153,7 +153,7 @@
   <script type="text/x-template" id="contact-templateFR">
     <div class="measure">
       <p class="mt0">Pour me contacter:</p>
-      <p class="mt0"><a class="dark-pink link no-underline" href="mailto:benjamin.jusserand@gmail.com" target="_blank">benjamin.jusserand@gmail.com</a></p>
+      <p class="mt0"><a class="dark-pink " href="mailto:benjamin.jusserand@gmail.com" target="_blank">benjamin.jusserand@gmail.com</a></p>
 
     </div>
   </script>
@@ -161,26 +161,47 @@
 
   <script type="text/x-template" id="writing-templateFR">
     <div class="measure">
-      <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink link no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
+      <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
       <hr class="o-40 mb3">
-      <a href="https://medium.freecodecamp.com/vue-js-introduction-for-people-who-know-just-enough-jquery-to-get-by-eab5aa193d77" target="_blank" class="no-underline dark-pink link fw6 db mb3">An everlasting dream with you
-</a>
-      <a href="https://medium.com/@mattrothenberg/living-styleguides-instantly-with-runway-529c397e8dd5" target="_blank" class="no-underline dark-pink link fw6 db mb3">Missing a deadline with you</a>
-      <a href="https://uxdesign.cc/treating-full-stack-anxiety-e96f984a02ec" target="_blank" class="no-underline dark-pink link fw6 db mb3">Puzzle league demake</a>
+      <div class="yes">
+        <a href="https://mobandon.itch.io/deadline" target="_blank" class=" dark-pink fw6 db mb3">An everlasting dream with you</a>
+        <a href="https://mobandon.itch.io/an-everlasting-dream" target="_blank" class=" dark-pink  fw6 db mb3">Missing a deadline with you
+        <img class="exemple" src="https://img.itch.zone/aW1hZ2UvMTcyMzI3LzgwMzc2OS5wbmc=/315x250%23c/pzzjZA.png" alt=""></a>
+        <a href="https://mobandon.itch.io/gum-tiles" target="_blank" class=" dark-pink  fw6 db mb3">Puzzle league demake
+        <img class="exemple" src="https://img.itch.zone/aW1hZ2UvMTcyNjQ5LzgwMzc5MS5wbmc=/315x250%23c/KIMqdb.png" alt=""></a>
+      </div>
+
     </div>
   </script>
 
-  <script type="text/x-template" id="sites-templateFR">
+  <script type="text/x-template" id="compet-templateFR">
     <div class="measure-wide">
-      <p class="mt0">Mes sites web</p>
+      <p class="mt0">Je peux développer des sites et applications web en full stack avec <strong>HTML, CSS, JS, PHP</strong></p>
+      <p class="mt0"><a class="dark-pink  " href="https://github.com/mobandon" target="_blank"> Retrouvez l'ensemble de mes projets open-source sur GitHub</a><p>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="music-templateFR">
+    <div class="measure-wide">
+      <p class="mt0">Joueur de violon depuis 10 ans, je compose occasionellement de la musique électronique que je met à prix ibre</p>
+      <hr class="o-40 mb3">
+      <div class="yes">
+        <a href="https://mobandon.bandcamp.com/track/misleading-paths" target="_blank" class=" dark-pink fw6 db mb3">Misleading paths
+      <img class="exemple" src="https://f4.bcbits.com/img/a4115724382_10.jpg" alt="">
+        </a>
+
+        <a href="https://mobandon.bandcamp.com/track/contre-addiction-mobandons-kinda-weird-remix" target="_blank" class=" dark-pink fw6 db mb3">Contre-addiction
+  <img class="exemple" src="https://f4.bcbits.com/img/a2173627461_10.jpg" alt="">
+        </a>
+      </div>
     </div>
   </script>
 
   <script type="text/x-template" id="merge-templateFR">
     <div class="measure-wide">
       <p class="mt0">Je suis en train de créer une expérience interractive: <strong>Merge Paradigm</strong></p>
-      <p class="mt0">Découvrez l'histoire de Ko, un jeune misanthrope masqué cohabitant avec Achille, un démon devant lui procurer de l'anxiété qui devient intrigé par l'humanité.</p>
-      <p class="mt0">Explorez les rapports et les notes des personnages, </p>
+      <p class="mt0">Découvrez l'histoire de Ko, un jeune insociable portant un masque d'ours cohabitant avec Achille, un démon devant lui procurer de l'anxiété qui devient intrigé par l'humanité.</p>
+      <p class="mt0">Explorez les rapports et les notes des personnages et jouez à des mini jeux. </p>
     </div>
   </script>
 

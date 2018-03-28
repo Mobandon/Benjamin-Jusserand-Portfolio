@@ -96,7 +96,15 @@ nav .f1{
   font-family: "CDEF";
 }
 
+.exemple{
+  /* width:30%; */
+  display: block;
+}
 
+.yes{
+  display: flex;
+  text-align: center;
+}
 
 
 
