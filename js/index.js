@@ -243,7 +243,8 @@ new Vue({
     windows: SITE_CONTENT[currentlang],
     activeWindowTitle: 'MobOS',
     texto: SITE_TRAD[currentlang],
-    showMenu:true
+    showMenu:true,
+    showHelp:true
   },
   created: function created() {
     eventHub.$on('close-window', this.closeWindow);
@@ -251,6 +252,7 @@ new Vue({
   },
   methods: {
     closeWindow: function closeWindow(element) {
+      this.showHelp = false;
       var match = _.find(this.windows, {
         id: element.id
       });
@@ -268,6 +270,7 @@ new Vue({
       this.activeWindowTitle = title;
     },
     openWindow: function openWindow(category) {
+      this.showHelp = false;
       var match = _.find(this.windows, {
         id: category
       });
@@ -298,6 +301,9 @@ new Vue({
     },
     switchMenu: function switchMenu(){
       this.showMenu = !this.showMenu;
+    },
+    switchHelp: function switchHelp(){
+      this.showHelp = !this.showHelp;
     }
   }
 });

@@ -38,6 +38,9 @@
   #nom{
     position:relative;
   }
+  .help{
+    display: none;
+  }
 
 }
 
@@ -60,6 +63,10 @@
 
   button{
     cursor: pointer;
+  }
+  .yes{
+    display: flex;
+
   }
 }
 
@@ -102,8 +109,15 @@ nav .f1{
 }
 
 .yes{
-  display: flex;
   text-align: center;
+}
+
+.help{
+  top: 20%;
+  left: 50%;
+  width:25%;
+  border: solid white 1px;
+  border-radius: 10px;
 }
 
 

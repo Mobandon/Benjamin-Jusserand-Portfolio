@@ -100,8 +100,16 @@
       <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" @click="openWindow('mentions')" v-html="texto.legal"></button>
       <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" v-html="texto.contrast"></button>
       <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" @click="switchlang()" v-html="texto.lang"></button>
-      <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" v-html="texto.help"></button>
+      <button v-show='showMenu' class="white link  f3 mr4 bn bg-transparent" @click="switchHelp()" v-html="texto.help"></button>
     </nav>
+    <div v-show="showHelp" class="white absolute pa3 help">
+      <p class="mt0"><strong>AIDE</strong></p>
+      <hr class="o-40 mb3">
+      <p class="mt0">Cliquez sur une icone pour afficher la fenêtre correspondante.</p>
+      <p class="mt0">Fermez une fenêtre en cliquant sur les croix.</p>
+      <p class="mt0">Fermez le menu du bas en cliquant sur l'icone à gauche.</p>
+      <p class="mt0">Do you speak English? Click the translate button.</p>
+    </div>
   </div>
 
   <script type="x/template" id="draggable-window">
@@ -119,22 +127,21 @@
     </div>
   </script>
 
-<!-- TODO: Aide de début id:2 gh:4 ic:gh-->
-<!-- TODO: Lien Github pour la section sites id:1 gh:3 ic:gh-->
-<!-- TODO: Images pour les jeux id:0 gh:2 ic:gh-->
+
+
   <script type="text/x-template" id="welcome-templateFR">
     <div class="measure">
-      <p class="mt0">Mon nom est <a class="dark-pink " href="http://bjusserand.mmi-angouleme.fr/" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon</p>
+      <p class="mt0">Mon nom est <a class="dark-pink " href="http://bjusserand.mmi-angouleme.fr/" target="_blank">Benjamin Jusserand</a> aussi connu sous le pseudonyme Mobandon.</p>
       <p>Etudiant a <a class="dark-pink " href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'IUT d'Angoulême</a> et créateur de <a class="dark-pink " href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
         studio indépendant créateur d'expériences intéractives
-        <p>Je parle Anglais et Espagnol</p>
+        <p>Je parle Anglais et Espagnol.</p>
         <p><a class="dark-pink " href="https://twitter.com/mobandonware" target="_blank">N'hésitez pas à visiter mon twitter!</a></p>
 
   </script>
 
   <script type="text/x-template" id="welcome-templateEN">
     <div class="measure">
-      <p class="mt0">My name is <a class="dark-pink " href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon</p>
+      <p class="mt0">My name is <a class="dark-pink " href="http://mattrothenberg.com" target="_blank">Benjamin Jusserand</a> also known as Mobandon.</p>
       <p>Student at <a class="dark-pink " href="http://iut-angouleme.univ-poitiers.fr/" target="_blank">l'iut d'angoulême</a> and creator of <a class="dark-pink " href="https://runwayapp.io" target="_blank">The loner's 05th tone</a>,
         studio indépendant créateur d'expériences intéractives
         <p>I speak english and French <a class="dark-pink " href="https://github.com/mattrothenberg" target="_blank"> </a></p>
@@ -161,7 +168,7 @@
 
   <script type="text/x-template" id="writing-templateFR">
     <div class="measure">
-      <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a></p>
+      <p class="mt0">Je développe des jeux jouables dans le navigateur. Vous pouvez les voir dans <a class="dark-pink no-under-line" href="https://mobandon.itch.io" target="_blank">Itch.io</a>.</p>
       <hr class="o-40 mb3">
       <div class="yes">
         <a href="https://mobandon.itch.io/deadline" target="_blank" class=" dark-pink fw6 db mb3">An everlasting dream with you</a>
@@ -177,13 +184,13 @@
   <script type="text/x-template" id="compet-templateFR">
     <div class="measure-wide">
       <p class="mt0">Je peux développer des sites et applications web en full stack avec <strong>HTML, CSS, JS, PHP</strong></p>
-      <p class="mt0"><a class="dark-pink  " href="https://github.com/mobandon" target="_blank"> Retrouvez l'ensemble de mes projets open-source sur GitHub</a><p>
+      <p class="mt0"><a class="dark-pink  " href="https://github.com/mobandon" target="_blank"> Retrouvez l'ensemble de mes projets open-source sur GitHub</a>.<p>
     </div>
   </script>
 
   <script type="text/x-template" id="music-templateFR">
     <div class="measure-wide">
-      <p class="mt0">Joueur de violon depuis 10 ans, je compose occasionellement de la musique électronique que je met à prix ibre</p>
+      <p class="mt0">Joueur de violon depuis 10 ans, je compose occasionellement de la musique électronique que je met <a class="dark-pink  " href="https://mobandon.bandcamp.com/" target="_blank">à prix libre.</a></p>
       <hr class="o-40 mb3">
       <div class="yes">
         <a href="https://mobandon.bandcamp.com/track/misleading-paths" target="_blank" class=" dark-pink fw6 db mb3">Misleading paths
