@@ -7,7 +7,7 @@ var SITE_TRAD = [{
     contrast: 'Contraste',
     help: 'Aide',
     contact: 'Contactez-moi!',
-    lang: '<i class="fas fa-language mr1"></i>'
+    lang: '<i class="fas fa-language fa-lg mr1"></i>'
   },
   {
     home: 'Who I am',
@@ -18,7 +18,7 @@ var SITE_TRAD = [{
     contrast: 'Contrast',
     help: 'Help',
     contact: 'Contact me!',
-    lang: '<i class="fas fa-language mr1"></i>'
+    lang: '<i class="fas fa-language fa-lg mr1"></i>'
   }
 ];
 

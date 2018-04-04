@@ -44,6 +44,22 @@
 
 }
 
+@media (max-height:690px){
+  .help{
+    overflow-y: scroll;
+  }
+
+}
+
+@media (mix-height:690px){
+  .help{
+    overflow-y: hidden;
+  }
+
+}
+
+
+
 @media (min-width: 1000px) {
   #desktop:before{
     filter:invert(100%);
@@ -118,6 +134,8 @@ nav .f1{
   width:25%;
   border: solid white 1px;
   border-radius: 10px;
+  max-height: 70%;
+
 }
 
 
